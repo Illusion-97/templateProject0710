@@ -1,0 +1,12 @@
+<article>
+  @if (article.src) {
+    <a [href]="article.lien" class="image"><img [src]="'images/' + article.src" [alt]="article.alt"/></a>
+  } @else {
+    <p>Article sans image</p>
+  }
+  <h3>{{ article.titre }}</h3>
+  <p>{{ article.description }}</p>
+  <ul class="actions">
+    <li><a href="#" class="button">More</a></li>
+  </ul>
+</article>
