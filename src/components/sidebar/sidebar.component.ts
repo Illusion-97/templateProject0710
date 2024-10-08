@@ -2,12 +2,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { Minipost, MiniPostComponent } from "./mini-post/mini-post.component";
 import { SearchComponent } from "./search/search.component";
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, SlicePipe, TitleCasePipe } from '@angular/common';
+import { TruncatePipe } from "../../tools/truncate.pipe";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FooterComponent, MiniPostComponent, SearchComponent/*, NgFor, NgIf*/],
+  imports: [FooterComponent, MiniPostComponent, SearchComponent, TitleCasePipe /*, NgFor, NgIf*/, TruncatePipe, SlicePipe],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

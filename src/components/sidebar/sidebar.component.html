@@ -4,8 +4,8 @@
 
       <!-- Search -->
         <section id="search" class="alt">
-            <app-search [(searchValue)]="textParent"/>
-            <p>TextParent : {{textParent}}</p>
+          <app-search [(searchValue)]="textParent"/>
+            <p>TextParent : {{textParent | truncate:25:" (...)"}}</p>
         </section>
 
       <!-- Menu -->
@@ -60,7 +60,7 @@
             <!--<ng-container *ngFor="let minipost of miniposts">
                 <app-mini-post  *ngIf="minipost.imageSrc" [minipost]="minipost"/>
             </ng-container>-->
-            @for(minipost of miniposts; track $index) {
+            @for(minipost of miniposts | slice:2; track $index) {
                 @if(minipost.imageSrc) {
                     <app-mini-post [minipost]="minipost"/>
                 }
