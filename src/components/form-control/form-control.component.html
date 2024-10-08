@@ -1,0 +1,14 @@
+<input [class.invalid]="(text.dirty || text.touched) && text.invalid" type="text" [formControl]="text"/>
+@if(text.hasError("required")) {
+    <p>Le champ est requis</p>
+}
+@if (text.hasError("maxlength")) {
+    <p>La valeur ne dois pas dépasser 10 chars</p>
+}
+<p>Value : {{text.value}}</p>
+<p>Valid : {{text.valid}}</p>
+<p>Invalid : {{text.invalid}}</p>
+<p>Touched : {{text.touched}}</p>
+<p>Dirty : {{text.dirty}}</p>
+<p>Pristine : {{text.pristine}}</p>
+<p>Error : {{text.errors | json}}</p>

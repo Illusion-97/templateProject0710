@@ -1,0 +1,11 @@
+<form (submit)="onSubmit(formElement)" #formElement>
+    <label> Email :
+      <input [class.invalid]="!emailInput.checkValidity()" type="email" name="mail" [(ngModel)]="email" required #emailInput>
+    </label>
+    <label> Password :
+      <input [class.invalid]="!passwordInput.checkValidity()" 
+        type="password" name="password" [(ngModel)]="password" 
+        required minlength="6" #passwordInput>
+    </label>
+    <input [disabled]="!formElement.checkValidity()" type="submit" value="Enregistrer">
+</form>
