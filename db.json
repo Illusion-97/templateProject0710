@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "email": "yadekalom@gmail.com",
+      "password": "$2a$10$/4SBZC3f/xcdgL/x/NUs9OtVTYahFueWejWwQluGm8TumyOJKMObG",
+      "id": 1,
+      "username": "Yanis"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "src": "pic07.jpg",
+      "titre": "Un Article",
+      "lien": "#",
+      "alt": "Halte",
+      "description": "Une description"
+    }
+  ],
+  "products": []
+}

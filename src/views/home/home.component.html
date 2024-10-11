@@ -59,8 +59,8 @@
       <h2>Ipsum sed dolor</h2>
     </header>
     <div class="posts">
-        @for (article of data; track $index) {
-          <app-article [article]="article"></app-article>
+        @for (article of data | async; track $index) {
+          <app-article [article]="article" (articleDeteleted)="getArticles()"></app-article>
         }
     </div>
   </section>

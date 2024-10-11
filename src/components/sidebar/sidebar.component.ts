@@ -4,11 +4,13 @@ import { Minipost, MiniPostComponent } from "./mini-post/mini-post.component";
 import { SearchComponent } from "./search/search.component";
 import { NgFor, NgIf, SlicePipe, TitleCasePipe } from '@angular/common';
 import { TruncatePipe } from "../../tools/truncate.pipe";
+import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FooterComponent, MiniPostComponent, SearchComponent, TitleCasePipe /*, NgFor, NgIf*/, TruncatePipe, SlicePipe],
+  imports: [FooterComponent, MiniPostComponent, SearchComponent, TitleCasePipe /*, NgFor, NgIf*/, TruncatePipe, SlicePipe, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
@@ -62,5 +64,8 @@ export class SidebarComponent {
         text: 'Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.'
     }
 ]
+
+constructor(protected auth: AuthService) {
+}
 
 }

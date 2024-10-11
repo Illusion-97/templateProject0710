@@ -1,7 +1,9 @@
 import { JsonPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AbstractFormGroupComponent } from '../../tools/abstract-form-group-component';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +23,10 @@ export class RegisterComponent extends AbstractFormGroupComponent {
     password: this.password,
   })
 
+  private service : AuthService = inject(AuthService)
+  private router: Router = inject(Router)
+
   onSubmit$(): void {
-    console.log("USER", this.form.value)
+    this.service.register(this.form.value).subscribe(() => this.router.navigate(['/auth/login']))
   }
 }

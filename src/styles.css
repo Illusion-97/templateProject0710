@@ -2,3 +2,7 @@
 .invalid {
     border: 1px red solid !important;
 }
+
+.cursor-wait {
+    cursor: wait !important;
+}
